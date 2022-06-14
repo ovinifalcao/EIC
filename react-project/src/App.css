@@ -1,0 +1,16 @@
+body{
+  background: rgba(230,230,230,1);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  background-image: url('https://equipeicfcapao.com.br/imgs/icf_cp_2022_bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-color: rgba(255,255,255,0.7);
+  background-blend-mode: lighten;
+}
+
+h1, h2, h3, h4, h5, p{
+  margin: 0;
+  font-weight: 100;
+}

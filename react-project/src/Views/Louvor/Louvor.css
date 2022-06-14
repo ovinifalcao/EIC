@@ -1,0 +1,29 @@
+#dv_container_Escala{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1vw;
+    margin: 1vh 0 1vh;
+}
+
+#hd_Louvor{
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media(max-width: 800px) {
+
+    #dv_container_Escala{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: no;
+        justify-content: center;
+        align-items: center;
+        gap: 3vh;
+  }
+
+}
+
+

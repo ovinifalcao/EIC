@@ -1,0 +1,14 @@
+#dv_Container_Streaming{
+    background-color:#57BB63 ;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+    width: 20%;
+}
+
+#img_logo_streaming{
+    max-width: 4vh;
+}

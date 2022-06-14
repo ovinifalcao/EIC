@@ -1,0 +1,32 @@
+#dv_Header{
+    background-color: #43715D;
+    font-weight: 200;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 0 1vh;
+    position: sticky;
+    top:0;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 15px 15px;
+}
+
+#img_logo_icf{
+    max-height: 5vh;
+    margin: 0 0.5vw 0;
+}
+
+.tx_Header{
+    font-size: clamp(1em, 3vw, 35px);
+}
+
+
+ @media(max-width: 800px) {
+    #dv_Header{
+        padding: 0.5vh 0 0.5vh;
+        border-radius: 0 0 10px 10px;
+    }
+}

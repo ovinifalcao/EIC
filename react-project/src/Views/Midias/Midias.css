@@ -1,0 +1,15 @@
+#hd_Midias{
+    display: flex;
+    flex-direction: column;
+}
+
+#dv_Container_Midias{
+
+}
+
+#dv_FormacaoContainer_Midias{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* background-color: rgb(66, 15, 15); */
+}
