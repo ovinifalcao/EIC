@@ -21,10 +21,10 @@ namespace eic_api_services.Controllers
 
 
         [HttpGet]
-        public async Task<List<Models.API.Louvor>> GetEscalas(DateTime DataCorte)
+        public async Task<List<Models.API.Louvor>> GetEscalas()
         {
-
-             var todasPlaylists = await _context.Playlists
+            var DataCorte = DateTime.Now;
+            var todasPlaylists = await _context.Playlists
                 .Include(pl => pl.Plataforma)
                 .Include(pl => pl.Streaming)
                 .Include(pl => pl.Streaming.Servico)

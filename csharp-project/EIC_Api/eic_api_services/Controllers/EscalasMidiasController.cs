@@ -20,9 +20,9 @@ namespace eic_api_services.Controllers
         }
 
         [HttpGet]
-        public async Task<List<Models.API.Midias>> GetEscalas(DateTime DataCorte)
+        public async Task<List<Models.API.Midias>> GetEscalas()
         {
-
+            var DataCorte = DateTime.Now;
             var Servicos = await _context.Servicos
                 .Where(s => s.Data >= DataCorte.AddDays(-1))
                 .ToListAsync();
