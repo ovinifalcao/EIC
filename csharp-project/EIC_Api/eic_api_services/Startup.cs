@@ -20,7 +20,7 @@ namespace eic_api_services
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = Configuration["ConexaoMySql:MySqlConnectionString"];
+            var connection = Configuration.GetConnectionString("MySqlConnectionString");
             services.AddDbContext<Models.EICContexto>(options =>
                 options.UseMySql(connection, ServerVersion.AutoDetect(connection))
             );
