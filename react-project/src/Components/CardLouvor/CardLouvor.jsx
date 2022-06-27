@@ -29,19 +29,25 @@ export default function CardLouvor(props) {
           musicTitle="Dependo de Ti"
           artistName="Baruk"
           musicTone="Eb"
+          vslink=""
+          cifralink=""
+          vozeslink=""
+          letralink=""
           background="#22577E"
           index={0}
-          position={menuNames.first}
-        />
+      />
 
         <ItemPlaylist
           coverMusic="https://upload.wikimedia.org/wikipedia/pt/c/ca/Entre_-_Paulo_C%C3%A9sar_Baruk.jpg"
           musicTitle="Eu navegarei"
           artistName="Kemuel"
           musicTone="Eb"
+          vslink=""
+          cifralink=""
+          vozeslink=""
+          letralink=""
           background="#5584AC"
           index={1}
-          position={menuNames.second}
         />
 
         <ItemPlaylist
@@ -49,19 +55,25 @@ export default function CardLouvor(props) {
           musicTitle="Emaus"
           artistName="Morada"
           musicTone="Eb"
+          vslink=""
+          cifralink=""
+          vozeslink=""
+          letralink=""
           background="#95D1CC"
           index={2}
-          position={menuNames.third}
-        />
+      />
 
         <ItemPlaylist
           coverMusic="https://upload.wikimedia.org/wikipedia/pt/c/ca/Entre_-_Paulo_C%C3%A9sar_Baruk.jpg"
           musicTitle="Canção de Milena"
           artistName="ICF Capão"
           musicTone="Eb"
+          vslink=""
+          cifralink=""
+          vozeslink=""
+          letralink=""
           background="#6E85B2"
           index={3}
-          position={menuNames.fourth}
         />
 
       </div>
