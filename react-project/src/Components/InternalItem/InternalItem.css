@@ -1,0 +1,29 @@
+
+.dv_internalItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.11);
+    padding: 5px;
+    min-width: 50px;
+    min-height: 60px;
+    border-radius: 5px;
+    transition: all .5s ease;
+}
+
+.dv_internalItem:active{
+    transform: scale(0.9);
+}
+
+.dv_internalItems a{
+    text-decoration: none;
+}
+
+.p_internalTitle{
+    font-style: italic;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 5px 0;
+}

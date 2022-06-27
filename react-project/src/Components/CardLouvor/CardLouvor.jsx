@@ -5,6 +5,16 @@ import CardsHeaders from '../CardsHeader/CardsHeader';
 import ItemPlaylist from '../ItemPlaylist/ItemPlaylist';
 
 export default function CardLouvor(props) {
+
+
+  const menuNames = {
+    first: "first",
+    second: "second",
+    third: "third",
+    fourth: "fourth",
+    fiveth: "fiveth"
+  }
+
   return (
     <div className="dv_Container">
 
@@ -21,6 +31,7 @@ export default function CardLouvor(props) {
           musicTone="Eb"
           background="#22577E"
           index={0}
+          position={menuNames.first}
         />
 
         <ItemPlaylist
@@ -30,6 +41,7 @@ export default function CardLouvor(props) {
           musicTone="Eb"
           background="#5584AC"
           index={1}
+          position={menuNames.second}
         />
 
         <ItemPlaylist
@@ -39,6 +51,7 @@ export default function CardLouvor(props) {
           musicTone="Eb"
           background="#95D1CC"
           index={2}
+          position={menuNames.third}
         />
 
         <ItemPlaylist
@@ -48,6 +61,7 @@ export default function CardLouvor(props) {
           musicTone="Eb"
           background="#6E85B2"
           index={3}
+          position={menuNames.fourth}
         />
 
       </div>
