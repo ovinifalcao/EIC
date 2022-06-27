@@ -13,6 +13,15 @@
     border-width: thin;
 }
 
+.dv_PlaylistContainer{
+    background-color: chocolate;
+    width: 80%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 15px 0;
+}
+
 #dv_SpotifyEmbedded_Louvor{
     max-width: 90%;
     border-radius: 5px;
