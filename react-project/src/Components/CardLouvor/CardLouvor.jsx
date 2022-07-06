@@ -9,11 +9,10 @@ export default function CardLouvor(props) {
 =======
 
   let dateService = new Date(props.infoDoCard.servico.data).getDay()
-  console.log(dateService)
 
     return (
       <div className="dv_Container"
-      style = {dateService === 5 ? {backgroundColor: 'rgba(190, 208, 21, 0.1)'} : {backgroundColor: 'rgba(255, 255, 255, 0.4)'} }
+      style = {dateService === 5 ? {backgroundColor: 'rgba(255, 124, 0, 0.2)'} : {backgroundColor: 'rgba(255, 255, 255, 0.4)'} }
       >
 >>>>>>> 74bbf4e (Adding diff color for friday Schedules)
 
