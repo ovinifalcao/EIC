@@ -53,7 +53,7 @@ namespace eic_api_services.Controllers
                 });
             }
 
-            return EscalaLouvor;
+            return EscalaLouvor.OrderBy(escala => escala.Servico.Data).ToList();
         }
 
 

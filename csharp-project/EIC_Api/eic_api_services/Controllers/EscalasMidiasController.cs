@@ -32,7 +32,7 @@ namespace eic_api_services.Controllers
                 .Include(e => e.Ministro)
                 .Include(e => e.Servico)
                 .Where(e => e.Servico.Data  >= DataCorte.AddDays(-1) 
-                    && e.Funcao.Ministerio.Id == 2)
+                    && e.Funcao.Ministerio.Id == 2 && e.Ministro != null)
                 .ToListAsync();
 
             var EscalaMidias = new List<Models.API.Midias>();
