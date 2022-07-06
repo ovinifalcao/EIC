@@ -15,7 +15,7 @@ export default function Midias(){
 
     useEffect(() => {
       api
-        .get("/EscalasMidias", { params: { DataCorte: Dt_Today.toISOString().slice(0, 10) }})
+        .get("/EscalasMidias")
         .then((response) => setEscala(response.data));
     }, []);
   

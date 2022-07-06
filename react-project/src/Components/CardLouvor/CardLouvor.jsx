@@ -4,8 +4,14 @@ import CardStreaming from '../CardStreaming/CardStreaming';
 import CardsHeaders from '../CardsHeader/CardsHeader';
 
 export default function CardLouvor(props) {
+
+  let dateService = new Date(props.infoDoCard.servico.data).getDay()
+  console.log(dateService)
+
     return (
-      <div className="dv_Container">
+      <div className="dv_Container"
+      style = {dateService === 5 ? {backgroundColor: 'rgba(190, 208, 21, 0.1)'} : {backgroundColor: 'rgba(255, 255, 255, 0.4)'} }
+      >
 
         <CardsHeaders
           infoDoServico = {props.infoDoCard.servico}
