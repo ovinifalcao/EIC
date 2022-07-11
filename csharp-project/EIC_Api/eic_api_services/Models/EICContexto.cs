@@ -1,8 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace eic_api_services.Models
 {
@@ -17,9 +13,10 @@ namespace eic_api_services.Models
         public DbSet<Ministerios> Ministerios { get; set; }
         public DbSet<Ministros> Ministros { get; set; }
         public DbSet<Platformas> Platformas { get; set; }
-        public DbSet<Playlist> Playlists { get; set; }
         public DbSet<Servicos> Servicos { get; set; }
-        public DbSet<Streamings> Streamings { get; set; }
+        public DbSet<Musicas> Musicas { get; set; }
+        public DbSet<Playlists_Info> Playlists_Info { get; set; }
+        public DbSet<Playlists_Plataforma> Playlists_Plataforma { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -47,9 +44,6 @@ namespace eic_api_services.Models
                 new { Descricao = "Projeção", Id = 9, MinisterioId = 2 },
                 new { Descricao = "Transmicao", Id = 10, MinisterioId = 2 }
                 );
-
         }
-
-
     }
 }

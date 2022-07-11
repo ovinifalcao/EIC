@@ -3,13 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eic_api_services.Models
 {
-    public class Playlist
+    public class Playlists_Plataforma
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public Platformas Plataforma { get; set; }
-        public Streamings Streaming { get; set; }
+        public Servicos Servico { get; set; }
+        public Platformas Platforma { get; set; }
         public string Link { get; set; }
     }
 }
