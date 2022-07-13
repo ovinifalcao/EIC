@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eic_api_services.Models;
 
 namespace eic_api_services.Migrations
 {
     [DbContext(typeof(EICContexto))]
-    partial class EICContextoModelSnapshot : ModelSnapshot
+    [Migration("20220713163438_fix_Services_Playlist_info")]
+    partial class fix_Services_Playlist_info
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -245,7 +247,8 @@ namespace eic_api_services.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Tom")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasColumnType("varchar(1)");
 
                     b.Property<string>("VSLink")
                         .HasColumnType("longtext");

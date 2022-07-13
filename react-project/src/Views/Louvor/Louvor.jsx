@@ -16,6 +16,8 @@ export default function Louvor() {
     api
       .get("/EscalasLouvor")
       .then((response) => setEscala(response.data));
+
+    
   }, []);
 
   return (

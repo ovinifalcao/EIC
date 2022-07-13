@@ -27,7 +27,8 @@ namespace eic_api_services.Controllers
             var DataCorte = DateTime.Now.AddDays(-1);
             var idDoMinsLouvor = 1;
 
-            return MontarListaEscala(await ConsultarEscalas(DataCorte, idDoMinsLouvor));
+            return await MontarListaEscalaAsync(await ConsultarEscalas(new DateTime(2022,07,25), idDoMinsLouvor));
+
         }
 
         private async Task<List<Escalas>> ConsultarEscalas(DateTime dataCorte, int idMinisterio) => 
@@ -42,18 +43,31 @@ namespace eic_api_services.Controllers
             .OrderBy(svc => svc.Servico.Data)
             .ToListAsync();
 
-        private List<Louvor> MontarListaEscala(List<Escalas> escalas)
+        private List<Playlists_Plataforma> ConsultarPlaylistPlataforma(int idCulto) =>
+            _context.Playlists_Plataforma
+                .Where(pp => pp.Servico.Id == idCulto)
+                .ToList();
+
+        private async Task<List<Playlists_Info>> ConsultarPlaylistInfo(int idCulto) =>
+            await _context.Playlists_Info
+                .Include(pl => pl.Musica)
+                .Where(pl => pl.Servico.Id == idCulto)
+                .ToListAsync();
+
+        private async Task<List<Louvor>> MontarListaEscalaAsync(List<Escalas> escalas)
         {
             var cultosDistintos = escalas.Select(e => e.Servico).Distinct().ToList();
             var escalaMontadas = new List<Louvor>();
 
-            foreach(Servicos culto in cultosDistintos)
+            foreach (Servicos culto in cultosDistintos)
             {
                 escalaMontadas.Add(
                     new Louvor()
                     {
                         Servico = culto,
-                        Formacao = escalas.Where(e => e.Servico == culto).ToList()
+                        Formacao = escalas.Where(e => e.Servico == culto).ToList(),
+                        Playlists_Info = await ConsultarPlaylistInfo(culto.Id),
+                        Playlists_Plataformas = ConsultarPlaylistPlataforma(culto.Id)
                     });
             }
 

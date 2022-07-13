@@ -10,7 +10,7 @@ namespace eic_api_services.Models
         public int Id { get; set; }
         public Servicos Servico { get; set; }
         public Musicas Musica { get; set; }
-        public char Tom { get; set; }
+        public string Tom { get; set; }
         public string VSLink { get; set; }
         public string CrifraLink { get; set; }
         public string VozesLink { get; set; }
