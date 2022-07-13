@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using eic_api_services.Models;
 using System;
+using eic_api_services.Models.API;
 
 namespace eic_api_services.Controllers
 {
@@ -21,25 +22,42 @@ namespace eic_api_services.Controllers
 
 
         [HttpGet]
-        public async Task<List<Escalas>> GetEscalas()
+        public async Task<List<Louvor>> GetEscalas()
         {
             var DataCorte = DateTime.Now.AddDays(-1);
             var idDoMinsLouvor = 1;
 
-            var todasPlaylists = await _context.Escalas
-                .Include(svc => svc.Ministro)
-                .Include(svc => svc.Funcao)
-                .Include(svc => svc.Servico)
-                .Where(
-                    svc => svc.Servico.Data >= DataCorte
-                    && svc.Funcao.Ministerio.Id == idDoMinsLouvor
-                 )
-                .OrderBy(svc => svc.Servico.Data)
-                .ToListAsync();
-
-            return todasPlaylists;
+            return MontarListaEscala(await ConsultarEscalas(DataCorte, idDoMinsLouvor));
         }
 
+        private async Task<List<Escalas>> ConsultarEscalas(DateTime dataCorte, int idMinisterio) => 
+            await _context.Escalas
+            .Include(svc => svc.Ministro)
+            .Include(svc => svc.Funcao)
+            .Include(svc => svc.Servico)
+            .Where(
+                svc => svc.Servico.Data >= dataCorte
+                && svc.Funcao.Ministerio.Id == idMinisterio
+             )
+            .OrderBy(svc => svc.Servico.Data)
+            .ToListAsync();
 
+        private List<Louvor> MontarListaEscala(List<Escalas> escalas)
+        {
+            var cultosDistintos = escalas.Select(e => e.Servico).Distinct().ToList();
+            var escalaMontadas = new List<Louvor>();
+
+            foreach(Servicos culto in cultosDistintos)
+            {
+                escalaMontadas.Add(
+                    new Louvor()
+                    {
+                        Servico = culto,
+                        Formacao = escalas.Where(e => e.Servico == culto).ToList()
+                    });
+            }
+
+            return escalaMontadas;
+        }
     }
 }

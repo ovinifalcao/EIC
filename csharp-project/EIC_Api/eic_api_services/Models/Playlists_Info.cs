@@ -8,6 +8,7 @@ namespace eic_api_services.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public Servicos Servico { get; set; }
         public Musicas Musica { get; set; }
         public char Tom { get; set; }
         public string VSLink { get; set; }
