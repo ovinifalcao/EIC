@@ -14,7 +14,7 @@ export default function Louvor() {
 
   useEffect(() => {
     api
-      .get("/EscalasLouvor", { params: { DataCorte: Dt_Today.toISOString().slice(0, 10) }})
+      .get("/EscalasLouvor")
       .then((response) => setEscala(response.data));
   }, []);
 
